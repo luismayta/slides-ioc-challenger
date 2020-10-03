@@ -1,4 +1,4 @@
-const proj = require('./package.json').name;
+const proj = require('./package.json').name
 
 module.exports = {
   pathPrefix: `/${proj}`,
@@ -13,12 +13,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
-        modules: [
-          'mdx-deck',
-          'gatsby-theme-mdx-deck',
-          '@mdx-deck/themes',
-        ],
+        modules: ['mdx-deck', 'gatsby-theme-mdx-deck', '@mdx-deck/themes'],
       },
     },
   ],
-};
+}
