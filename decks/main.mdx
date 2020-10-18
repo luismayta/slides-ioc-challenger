@@ -1,0 +1,163 @@
+import { future as selected } from 'mdx-deck/themes'
+import {
+    Notes,
+    Image,
+    Split,
+    Appear,
+} from 'mdx-deck';
+import React from 'react'
+import { CodeSurfer } from "code-surfer"
+import { vsDark as codeTheme } from "@code-surfer/themes"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+import { Small, Left, Tomato } from '../components';
+import Profile from '../static/me.webp';
+import ImageUpgrade from '../static/mejorar.jpg';
+import QRCode from '../static/qr.png';
+
+export const theme = selected;
+
+<!-- Begin Slides -->
+
+# IoC Challenger
+
+
+<Notes>
+
+Hello everyone!
+
+Today I'm going to talk about the IoC challenger'
+
+</Notes>
+
+---
+
+# No Tenemos Tiempo
+
+<Image
+    src={ImageUpgrade}
+    style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        WebkitTextStrokeWidth: '2px',
+        WebkitTextStrokeColor: '#000',
+        backgroundColor: 'white',
+    }}>
+</Image>
+
+---
+
+# About Me 👨‍💻
+
+![L-robot](https://secure.gravatar.com/avatar/567d0a246f8b8eb5567b74d71d20a7b0?s=150&d=identicon)
+
+- **Go enthusiast**
+- **Python enthusiast**
+- **Dart enthusiast**
+- [github.com/luismayta](https://github.com/luismayta)
+
+
+<Notes>
+
+First, a little about me. My name is Rohit Gohri, I am a Sr. Software Developer at CollegeDunia.
+
+I am a full stack developer with a keen interest in DevOps, I love optimising developer workflows and working on devloper tooling.
+
+</Notes>
+
+---
+
+<Small>
+
+# 🕕 🕙 🕛 🕞
+
+# What Is Infrastructure as Code?
+
+</Small>
+
+<Notes>
+
+</Notes>
+
+---
+
+# Demo
+
+---
+
+# Agenda
+
+- Infrasturcture as code Challenger
+- Solving Challenges with terraform
+
+<Notes>
+
+</Notes>
+
+---
+
+# Goals
+
+- **Unify*** the view of resources
+- **Support** the modern data center (IaaS, PaaS, SaaS)
+- Expose a Way for individuals and teams to **safely and predictably change** infrastructure
+- Provide a workflow that is **technology agnostic**
+- Manage anything with an **API**
+
+<Notes>
+
+- Single source of truth: No more "But it works on my machine"
+
+</Notes>
+
+---
+
+## Initial Challenges
+
+<ul>
+    <Appear>
+        <li>Need to learn to Code</li>
+        <li>Can't automate a resource</li>
+        <li>Can't track changes</li>
+        <li>Don't know change impact</li>
+        <li>Need to revert a change</li>
+    </Appear>
+</ul>
+
+<Notes>
+
+
+</Notes>
+
+---
+
+## Scaling Challenges
+
+<ul>
+    <Appear>
+        <li>Multiple environments for infrastructure</li>
+        <li>Duplicate code</li>
+        <li>"Ball of Mud" configuration</li>
+        <li>Too many working on code</li>
+        <li>Dry run doesn't reflect change impact</li>
+        <li>Upgrade are disruptive</li>
+    </Appear>
+</ul>
+
+<Notes>
+
+
+</Notes>
+
+---
+
+# Solving Challenges with Terraform
+
+
+---
+
+
+<!-- # 🥳 -->
