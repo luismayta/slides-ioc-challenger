@@ -1,22 +1,19 @@
 {
   "keywords": [],
   "name": "@luismayta/slides-ioc-challenger",
-  "description": "slides-ioc-challenger for zsh",
-  "private": true,
+  "description": "slides ioc challenger",
+  "private": false,
   "repository": "ssh://git@github.com/luismayta/slides-ioc-challenger.git",
   "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "MIT",
   "stylintrc": ".stylintrc",
   "version": "0.0.0",
   "scripts": {
-    "generate": "cross-env TS_NODE_PROJECT='./tools/generators/ts-node.tsconfig.json' plop --plopfile tools/generators/index.ts",
-    "start": "yarn clean && gatsby develop",
-    "build": "./node_modules/.bin/tsc -p",
-    "build:slides": "yarn clean && gatsby build --prefix-path",
-    "build:tool": "yarn run build ./tools/",
+    "start": "yarn clean && mdx-deck decks/main.mdx",
+    "build": "yarn clean:build && mdx-deck build decks/main.mdx",
     "clean": "rimraf -rf dist",
     "clean:cache": "yarn clean ./node_modules/.cache",
-    "clean:build": "yarn clean dist .next out .serverless_nextjs",
+    "clean:build": "yarn clean .next out .serverless_nextjs",
     "clean:build:test": "yarn clean ./coverage",
     "clean:build:tool": "yarn clean ./build/tools",
     "clean:build:all": "yarn clean && yarn clean:build && yarn clean:build:tool && yarn clean:build:test",
@@ -42,7 +39,6 @@
     }
   },
   "devDependencies": {
-    "@ant-design/colors": "^4.0.5",
     "@babel/core": "^7.11.6",
     "@types/react-dom": "^16.9.8",
     "@types/react": "^16.9.50",
@@ -74,12 +70,18 @@
     "semantic-release": "^17.1.2",
     "shelljs": "^0.8.4",
     "ts-node": "^9.0.0",
+    "mdx-deck": "^3.0.13",
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "antd": "^4.6.6",
-    "mdx-deck": "^4.1.1",
-    "react-dom": "^16.13.1",
-    "react": "^16.13.1"
+    "@code-surfer/themes": "^3.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "code-surfer": "^3.0.0"
   }
 }
