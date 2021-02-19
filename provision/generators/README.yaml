@@ -26,25 +26,25 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: "MIT"
+license: 'MIT'
 
 # Canonical GitHub repo
 github_repo: luismayta/slides-ioc-challenger
 
 # Badges to display
 badges:
-  - name: "Build Status"
-    image: "https://travis-ci.org/luismayta/slides-ioc-challenger.svg?branch=main"
-    url: "https://travis-ci.org/luismayta/slides-ioc-challenger"
-  - name: "Issues"
-    image: "https://img.shields.io/github/issues/luismayta/slides-ioc-challenger.svg"
-    url: "https://github.com/luismayta/slides-ioc-challenger/issues"
-  - name: "Latest Release"
-    image: "https://img.shields.io/github/release/luismayta/slides-ioc-challenger.svg"
-    url: "https://travis-ci.org/luismayta/slides-ioc-challenger/releases"
-  - name: "Beacon"
-    image: "https://ga-beacon.appspot.com/UA-65019326-1/github.com/luismayta/slides-ioc-challenger/readme"
-    url: "https://github.com/luismayta/slides-ioc-challenger"
+  - name: 'Build Status'
+    image: 'https://travis-ci.org/luismayta/slides-ioc-challenger.svg?branch=main'
+    url: 'https://travis-ci.org/luismayta/slides-ioc-challenger'
+  - name: 'Issues'
+    image: 'https://img.shields.io/github/issues/luismayta/slides-ioc-challenger.svg'
+    url: 'https://github.com/luismayta/slides-ioc-challenger/issues'
+  - name: 'Latest Release'
+    image: 'https://img.shields.io/github/release/luismayta/slides-ioc-challenger.svg'
+    url: 'https://travis-ci.org/luismayta/slides-ioc-challenger/releases'
+  - name: 'Beacon'
+    image: 'https://ga-beacon.appspot.com/UA-65019326-1/github.com/luismayta/slides-ioc-challenger/readme'
+    url: 'https://github.com/luismayta/slides-ioc-challenger'
 
 # Short description of this project
 description: |-
@@ -65,5 +65,5 @@ usage: |-
 
 # Contributors to this project
 contributors:
-  - name: "Luis Mayta"
-    github: "luismayta"
+  - name: 'Luis Mayta'
+    github: 'luismayta'
