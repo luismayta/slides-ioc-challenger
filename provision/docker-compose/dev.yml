@@ -1,7 +1,6 @@
 # Docker Compose
 # https://docs.docker.com/compose/
 
-version: '3.6'
 services:
   # Python
   app:
@@ -21,6 +20,6 @@ services:
       args:
         stage: dev
     volumes:
-      - .:/usr/src
+      - .:/app
     env_file:
       - .env

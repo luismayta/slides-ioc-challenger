@@ -1,49 +1,40 @@
-FROM equipindustry/python:3.8.0-slim
+FROM python:3.8.0-slim as build
+
+ENV PACKAGES bash \
+    gcc \
+    openssl
+
+ENV PYTHONUNBUFFERED=0
+ENV PATH=/root/.local/bin:$PATH
+
+COPY Pipfile* /app/
+
+WORKDIR /app
+
+RUN apt-get update -y \
+  && apt-get install -y ${PACKAGES} --no-install-recommends \
+  && pip install --no-cache-dir --upgrade pip \
+# pipenv
+  && pip install --no-cache-dir --user pipenv \
+  && pipenv install --dev --skip-lock --python="$(which python)"
+
+COPY . .
+
+# App stage
+FROM python:3.8.0-slim
 
 ARG stage
 
-LABEL NAME slides-ioc-challenger-$stage
+LABEL NAME slides-ioc-challenger-app-$stage
 
-ENV USERNAME developer
+COPY --from=build /root/.local/share /root/.local/share
+COPY --from=build /root/.local/bin /root/.local/bin
+COPY --from=build /root/.local/lib /root/.local/lib
+COPY --from=build /app/ /app/
 
-ENV PACKAGES bash \
-  openssl
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED=0
+ENV PATH=/root/.local/bin:$PATH
 
-ENV ZUNIT_VERSION "0.8.2"
-
-COPY Pipfile* /usr/src/
-
-# set working directory to /usr/src/
-WORKDIR /usr/src/
-
-# install packages
-RUN apt-get update -y \
-  && apt-get install -y ${PACKAGES} --no-install-recommends \
-
-  # revolver
-  && curl -L https://raw.githubusercontent.com/molovo/revolver/master/revolver > /usr/local/bin/revolver \
-  && chmod +x /usr/local/bin/revolver \
-  # zunit
-  && curl -L https://github.com/zunit-zsh/zunit/releases/download/v${ZUNIT_VERSION}/zunit > /usr/local/bin/zunit \
-  && chmod +x /usr/local/bin/zunit \
-
-  # Permissions
-  && groupadd -g 500 -r python \
-  && groupadd ${USERNAME} \
-  && useradd -m -g ${USERNAME} -G python ${USERNAME} \
-  && chown -R ${USERNAME}:python /usr/local/bin \
-  && su ${USERNAME} \
-  && mkdir -p /usr/src \
-  && chown -R ${USERNAME} /usr/src \
-
-
-# pipenv
-  && pip3 install pipenv \
-  && pipenv install --dev --skip-lock \
-  && pipenv shell --fancy \
-
-# clean
-  && apt-get clean \
-  && apt-get autoremove \
-  && apt-get purge \
-  && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
