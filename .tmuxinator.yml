@@ -46,6 +46,11 @@ windows:
       layout: main-vertical
       panes:
         - ipython:
+  - cloud:
+      layout: main-vertical
+      panes:
+        - cloud:
+        - databases:
   - docker:
       layout: main-vertical
       panes:
